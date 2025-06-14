@@ -1,0 +1,66 @@
+---
+title: Charts overview
+description: Learn how to create charts
+---
+
+Zelij lets you create rich, interactive charts that visualize your data directly in the browser.  
+
+--- 
+
+# Chart editors
+You have two ways to build charts, depending on your preferred workflow:
+- [UI Editor](#ui-editor)
+- [Advanced Editor](#advanced-editor)
+
+Choose the method that best fits your needs. You can always mix and match in the same dashboard.
+
+## [UI Editor](/docs/charts/ui_editor)
+
+A visual, no-code editor that lets you:
+
+- Select a dataset and choose dimensions & metrics
+- Configure chart type, axes, and styling
+- Add one or more series with drag-and-drop simplicity
+
+Ideal for quick prototyping, data exploration, or users unfamiliar with SQL and chart config.
+
+## [Advanced Editor](/docs/charts/advanced_editor)
+
+A power-user mode that gives you full control:
+
+- Write custom SQL queries (powered by DuckDB-WASM)
+- Define chart options using raw Apache ECharts JSON
+
+Perfect for complex aggregations, fine-tuned styling, or charts that go beyond the UI editor's capabilities.
+
+---
+
+# Chart features
+
+## Cross-Chart Filtering
+
+Zelij supports **cross-chart filtering**, enabling users to interact with one chart and dynamically filter others within the same dashboard. This feature makes dashboards **interactive and explorable** — great for understanding how one variable affects others.
+
+### How It Works
+
+* When you **click on a dimension value** in a chart (e.g. a bar for `"Germany"` in a “Customers by Country” chart), a filter is automatically applied.
+* **All other charts using the same dataset** will update in real-time to reflect the filtered data.
+* Filters only apply within the same dataset, so charts that use **a different dataset** will remain unchanged.
+
+
+### The Filter Bar
+
+When a filter is applied by clicking on a chart:
+
+* A **filter chip** appears in the **filter bar** at the top of the dashboard.
+* Each filter chip shows:
+
+  * The filtered **dimension**
+  * The selected **value**
+  * A **remove** button
+
+You can:
+
+* **Click on the chip’s “×” icon** to remove the filter.
+  → This will immediately **reset the filtered charts** to their original (unfiltered) state.
+* **Apply multiple filters**, one per dimension per dataset — useful for narrowing down results interactively.

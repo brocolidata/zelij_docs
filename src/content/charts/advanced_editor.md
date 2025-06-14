@@ -1,0 +1,75 @@
+---
+title: Advanced editor
+description: Learn how to create charts using the advanced editor 
+---
+
+The **Advanced Editor** in Zelij gives you full control over how your charts are created. It’s ideal for users who are comfortable writing SQL and want to customize their charts using Apache ECharts directly.
+
+You can access the Advanced Editor when creating a chart tile in edit mode by switching to "Advanced Editor".
+
+You should use the Advanced Editor when : 
+* You want to write **custom SQL queries** that aren't easily built in the UI.
+* You need **full control** over chart appearance and behavior.
+* You want to build charts not yet supported by the Visual Editor.
+
+While the UI Editor helps you build charts through point-and-click, the Advanced Editor offers a more powerful, code-driven approach. It has two key components: SQL Query and Chart Options.
+
+---
+
+# Creation process
+
+## 1. **SQL Query**
+
+The SQL editor lets you define the data that powers your chart.
+
+* Write a **SELECT** query to fetch the data you need.
+* The result of the query becomes the chart's `dataset.source` (see [Apache EChats documentation about datasets](https://echarts.apache.org/handbook/en/concepts/dataset#define-data-in-dataset)).
+* You can query any configured data source.
+
+**Example:**
+
+```sql
+SELECT
+  year,
+  region,
+  SUM(sales) AS total_sales
+FROM
+  sales_data
+GROUP BY
+  year, region
+ORDER BY
+  year;
+```
+
+## 2. **Chart Options**
+
+This is where you define how your data is visualized.
+
+* The chart options follow the [Apache ECharts](https://echarts.apache.org/en/option.html) format.
+* The `dataset` field will automatically use the result of your SQL query—no need to define it manually.
+* You can customize chart type, axes, labels, series, tooltips, colors, and more.
+
+**Example:**
+```json
+{
+  "xAxis": { "type": "category" },
+  "yAxis": { "type": "value" },
+  "series": [
+    {
+      "type": "bar",
+      "encode": {
+        "x": "year",
+        "y": "total_sales"
+      }
+    }
+  ]
+}
+```
+
+---
+
+### Tips & Notes
+
+* Do not define a `dataset` manually in the chart options, a dataset is automatically added to the chart options with the SQL query result.
+* [Cross-charts filtering](/docs/charts#cross-charts-filtering) isn't supported for Advanced Editor.
+* Errors in the SQL query or JSON format will prevent the chart from rendering—check the console for feedback.
