@@ -1,8 +1,9 @@
 <!-- SocialIcons.svelte -->
 <script lang="ts">
-	import { socialLinks } from '$lib/config';
 	import type { Icons } from '$lib/types/nav';
 	import Button from './ui/button/button.svelte';
+
+	let { socialsArray } = $props();
 
 	const icons: Icons = {
 		twitter:
@@ -26,7 +27,7 @@
 
 <!-- Social Icons -->
 <div class="flex">
-	{#each socialLinks as { title, href, icon }}
+	{#each socialsArray as { title, href, icon }}
 		<Button
 			size="icon"
 			variant="ghost"

@@ -27,7 +27,9 @@
 				'css',
 				'svelte',
 				'shell',
-				'tsx'
+				'tsx',
+				'yml',
+				'sql'
 			]
 		});
 	});
@@ -35,13 +37,14 @@
 
 {#if highlighter}
 	<div class="flex flex-col gap-6 sm:flex-row">
-		<div>
+		<div class="min-w-0 flex-grow">
 			<DocHeader {title} {description} />
 			{#key contentKey}
 				<DocContent {highlighter} {theme} {data} />
 			{/key}
 		</div>
-		<div>
+
+		<div class="w-72 flex-shrink-0">
 			<div class="sticky top-20 flex w-72 flex-col gap-4">
 				<div class="hidden sm:block">
 					<TableOfContents />

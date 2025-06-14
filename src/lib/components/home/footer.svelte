@@ -1,5 +1,5 @@
 <script>
-	import { navItems, siteConfig } from '$lib/config';
+	import { navItems, siteConfig, companyInfo } from '$lib/config';
 	import SocialMedia from '../social-media.svelte';
 </script>
 
@@ -12,7 +12,7 @@
 			</a>
 		</div>
 
-		<ul class="text-center">
+		<!-- <ul class="text-center">
 			{#each navItems as item}
 				<li
 					class="relative inline-block pe-8 before:absolute before:end-3 before:top-1/2 before:-translate-y-1/2 before:text-gray-300 before:content-['/'] last:pe-0 last-of-type:before:hidden dark:before:text-neutral-600"
@@ -25,8 +25,16 @@
 					</a>
 				</li>
 			{/each}
-		</ul>
+		</ul> -->
 
-		<SocialMedia />
+		<div class="flex flex-col items-center gap-2">
+			<div class="flex items-center gap-2"> 
+				<img src={companyInfo.logo} alt={companyInfo.name} class="h-6" />
+				<span class="text-sm text-muted-foreground">by {companyInfo.name}</span>
+			</div>
+            <div class="w-full flex justify-center sm:justify-end">
+                <SocialMedia socialsArray={companyInfo.socials}/>
+            </div>
+        </div>
 	</div>
 </footer>

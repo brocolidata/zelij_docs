@@ -1,4 +1,4 @@
-import type { QuickLink } from "$lib/types/nav";
+import type { QuickLink, SocialLink } from "$lib/types/nav";
 import {
     type Icon as IconType,
 
@@ -10,12 +10,20 @@ export interface Feature {
     description: string;
 }
 
+interface CompanyInfo {
+    name: string;
+    socials: SocialLink[];
+}
+
 export interface SiteConfig {
     /** Current version of the documentation/project */
     version: string;
 
     /** Main title of the documentation site */
     title: string;
+
+    /** Subtitle of the documentation site */
+    subtitle: string;
 
     /** Detailed description of the project/documentation */
     description: string;

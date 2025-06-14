@@ -46,7 +46,7 @@
 			<h1
 				class="block text-4xl font-bold text-gray-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
 			>
-				{siteConfig.title}
+				{siteConfig.subtitle}
 			</h1>
 		</div>
 
@@ -80,7 +80,6 @@
 
 		<!-- Quick Links -->
 		<div class="mt-5 flex flex-wrap items-center justify-center gap-2">
-			<span class="text-sm text-gray-600 dark:text-neutral-400">Quick links:</span>
 			{#each siteConfig.quickLinks as link}
 				<Button variant="link" href={link.href} class="h-auto p-1">
 					{link.title}

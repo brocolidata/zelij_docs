@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { Button, buttonVariants } from '$lib/components/ui/button';
 	import { Separator } from '$lib/components/ui/separator';
-	import { ChevronDown, Compass, Menu } from 'lucide-svelte';
+	import { ChevronDown, Menu } from 'lucide-svelte';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import DarkModeToggle from '../dark-mode-toggle.svelte';
-	import { navItems, siteConfig } from '$lib/config';
+	import { navItems, siteConfig, socialLinks } from '$lib/config';
 	import SocialMedia from '../social-media.svelte';
 
 	let isNavOpen = false;
@@ -18,9 +18,10 @@
 	>
 		<!-- Logo w/ Collapse Button -->
 		<div class="flex items-center justify-between">
-			<a href="/">
+			<a href="/" class="flex items-center">
 				<img src={siteConfig.logo} alt={siteConfig.title} class="h-6 dark:hidden" />
 				<img src={siteConfig.logoDark} alt={siteConfig.title} class="hidden h-6 dark:block" />
+				<span class="pl-2">{siteConfig.title}</span>
 			</a>
 
 			<div class="flex items-center gap-2">
@@ -81,7 +82,7 @@
 							</Button>
 						{/if}
 					{/each}
-					<SocialMedia />
+					<SocialMedia socialsArray={socialLinks} />
 
 					<Separator orientation="vertical" class="mr-2 hidden h-5 md:block" />
 

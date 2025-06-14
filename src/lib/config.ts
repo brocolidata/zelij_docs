@@ -3,29 +3,49 @@ import type { NavItem, SocialLink } from "$lib/types/nav";
 
 import {
     Boxes,
-    Paintbrush,
     Workflow,
-    Zap
+    Zap,
+    Feather, 
+    Send
 } from 'lucide-svelte';
-import type { Feature, PromoConfig, SiteConfig } from "./types/config";
+import type { Feature, PromoConfig, SiteConfig, CompanyInfo } from "./types/config";
 
 
 export const siteConfig: SiteConfig = {
     version: '0.0.1',
-    title: 'Documentation',
+    title: 'Zelij',
+    subtitle: 'BI-as-code',
     description:
-        'Comprehensive documentation for your project. Built with Svelte 5, MDSvex, Tailwind CSS, and shadcn/ui components.',
-    github: 'https://github.com/code-gio/svelte-firekit-docs',
+        'Define your dashboards as YAML and deploy them as static web pages',
+    github: 'https://github.com/brocolidata/zelij',
     npm: '',
 
     quickLinks: [
-        { title: 'Customize', href: '/docs/customize' },
-        { title: 'Examples', href: '/docs/examples' }
+        // { title: 'Customize', href: '/docs/customize' },
+        // { title: 'Examples', href: '/docs/examples' }
+        { title: 'See the demo', href: 'https://brocolidata.github.io/open-data-viz/'}
     ],
-    logo: '/logo.svg',
-    logoDark: '/logo-white.svg',
+    logo: '/zelij_logo.svg',
+    logoDark: '/zelij_logo.svg',
     favicon: '/favicon.png',
 };
+
+export const companyInfo: CompanyInfo = {
+    name: 'Brocoli Data',
+    socials: [
+        {
+            title: 'LinkedIn',
+            href: 'https://www.linkedin.com/company/brocoli-data/',
+            icon: 'linkedin'
+        },
+        {
+            title: 'GitHub',
+            href: 'https://github.com/brocolidata',
+            icon: 'github'
+        }
+    ],
+    logo: '/brocoli_logo.png',
+}
 
 
 export let navItems: NavItem[] = [
@@ -37,15 +57,9 @@ export let navItems: NavItem[] = [
 ];
 
 export let socialLinks: SocialLink[] = [
-
-    {
-        title: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/giovanirodriguez26/',
-        icon: 'linkedin'
-    },
     {
         title: 'GitHub',
-        href: 'https://github.com/code-gio',
+        href: 'https://github.com/brocolidata/zelij',
         icon: 'github'
     },
 
@@ -55,32 +69,32 @@ export let socialLinks: SocialLink[] = [
 export const features: Feature[] = [
     {
         icon: Boxes,
-        title: 'Component Library',
-        description: 'Built on top of shadcn/ui, offering comprehensive accessible components with complete documentation'
+        title: 'Build your way',
+        description: 'Use the intuitive UI editor to create dashboards visually and export the YAML, or define everything directly in code'
     },
     {
-        icon: Workflow,
-        title: 'Type Safe',
-        description: 'Fully typed with TypeScript, providing excellent IDE support and reliable development experience'
+        icon: Send,
+        title: 'Deploy anywhere',
+        description: 'Dashboards can be exported and deployed as static websites, offering fast performance and minimal hosting costs'
     },
     {
-        icon: Paintbrush,
-        title: 'Fully Customizable',
-        description: 'Easily customize themes, layouts, and components to match your brand identity and requirements'
+        icon: Feather,
+        title: 'Lightweight by design',
+        description: 'All configuration and data are stored in plain files, which is easy to track in Git, share across teams, and move between environments'
     },
     {
         icon: Zap,
-        title: 'Fast & Modern',
-        description: 'Powered by Svelte 5, MDSvex, and TailwindCSS for optimal performance and developer experience'
+        title: 'Built for performance',
+        description: 'Zelij is powered by DuckDB-WASM for in-browser SQL execution and Apache ECharts for rich, interactive visualizations'
     }
 ];
 
 export let promoConfig: PromoConfig = {
     title: 'Need help with your project?',
     description:
-        'I offer custom development services, consulting, and technical guidance for your web applications.',
+        'We offer custom services, consulting, and technical guidance for your Data Platform.',
     ctaText: "Let's work together",
-    ctaLink: 'mailto:info@codegio.com',
+    ctaLink: 'mailto:contact.brocoli@gmail.com',
     lightImage: '/images/dev-services-light.jpg',
     darkImage: '/images/dev-services-dark.jpg'
 };
