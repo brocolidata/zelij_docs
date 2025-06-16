@@ -36,6 +36,6 @@ Zelij is now running at `http://localhost:5173`!
 
 ## Next Steps
 
-- See the [Configuration overview](/docs/configuration)
-- See the [Chart overview](/docs/charts)
-- See the [Deployment overview](/docs/deployment)
+- See the [Configuration overview](../docs/configuration)
+- See the [Chart overview](../docs/charts)
+- See the [Deployment overview](../docs/deployment)
