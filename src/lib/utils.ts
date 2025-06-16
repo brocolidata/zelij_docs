@@ -65,11 +65,11 @@ export function flyAndScale(
 }
 
 export function slugFromPath(path: string) {
-	return path.replace('/src/content/', '').replace('.md', '');
+	return path.replace('/src/content/', '').replace('.md', '').replace('.svx', '');
 }
 
 export async function getDoc(slug: string) {
-	const modules = import.meta.glob(`/src/content/**/*.md`);
+	const modules = import.meta.glob(`/src/content/**/*.{md,svx}`);
 	const match = findMatch(slug, modules);
 	const doc = await match?.resolver?.();
 
@@ -104,7 +104,7 @@ function getIndexDocIfExists(slug: string, modules: Modules) {
 	let match: { path?: string; resolver?: DocResolver } = {};
 
 	for (const [path, resolver] of Object.entries(modules)) {
-		if (path.includes(`/${slug}/index.md`) || path.includes(`/${slug}/index.svx`)) {
+		if (path.includes(`/${slug}/index.svx`)) {
 			match = { path, resolver: resolver as unknown as DocResolver };
 			break;
 		}

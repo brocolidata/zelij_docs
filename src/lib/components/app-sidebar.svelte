@@ -17,7 +17,7 @@
 			<Sidebar.MenuItem>
 				<Sidebar.MenuButton size="lg">
 					{#snippet child({ props })}
-						<a href="/" {...props}>
+						<a href={base} {...props}>
 							<img src="{base}{siteConfig.logo}" alt={siteConfig.title} class="h-6" />
 							<div class="flex flex-col gap-0.5 leading-none">
 								<span class="font-semibold"> {siteConfig.title} </span>
@@ -36,7 +36,7 @@
 					<Sidebar.MenuItem>
 						<Sidebar.MenuButton class="font-medium" isActive={path === groupItem.href}>
 							{#snippet child({ props })}
-								<a href={groupItem.href} {...props}>
+								<a href="{base}{groupItem.href}" {...props}>
 									{groupItem.title}
 								</a>
 							{/snippet}
@@ -47,7 +47,7 @@
 									<Sidebar.MenuSubItem>
 										<Sidebar.MenuSubButton isActive={path === item.href}>
 											{#snippet child({ props })}
-												<a href={item.href} {...props}>{item.title}</a>
+												<a href="{base}{item.href}" {...props}>{item.title}</a>
 											{/snippet}
 										</Sidebar.MenuSubButton>
 									</Sidebar.MenuSubItem>
@@ -61,7 +61,6 @@
 	</Sidebar.Content>
 	<div class="block sm:hidden">
 		<Sidebar.Footer>
-			<SocialMedia />
 		</Sidebar.Footer>
 	</div>
 
