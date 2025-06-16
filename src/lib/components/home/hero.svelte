@@ -5,6 +5,8 @@
 	import { ChevronRight, Clipboard, Check } from 'lucide-svelte';
 	import { siteConfig } from '$lib/config';
 	import { toast } from 'svelte-sonner';
+	import { base } from '$app/paths';
+
 
 	let isCopied = false;
 	const npmCommand = `npm install ${siteConfig.npm}`;
@@ -59,7 +61,7 @@
 
 		<!-- Action Buttons -->
 		<div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-			<Button href="/docs" variant="default">
+			<Button href="{base}/docs" variant="default">
 				Get Started
 				<ChevronRight class="size-4" />
 			</Button>
