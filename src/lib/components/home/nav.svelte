@@ -19,7 +19,7 @@
 	>
 		<!-- Logo w/ Collapse Button -->
 		<div class="flex items-center justify-between">
-			<a href="/" class="flex items-center">
+			<a href={base} class="flex items-center">
 				<img src={base}{siteConfig.logo} alt={siteConfig.title} class="h-6 dark:hidden" />
 				<img src={base}{siteConfig.logoDark} alt={siteConfig.title} class="hidden h-6 dark:block" />
 				<span class="pl-2">{siteConfig.title}</span>
