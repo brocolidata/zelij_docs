@@ -46,7 +46,7 @@ path: "SalesOrder.parquet"
 
 Then your project should include:
 
-```
+```yaml
 zelij_data/SalesOrder.parquet
 ```
 
