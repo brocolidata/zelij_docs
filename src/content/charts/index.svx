@@ -3,6 +3,11 @@ title: Charts overview
 description: Learn how to create charts
 ---
 
+<script>
+   import { base } from '$app/paths';
+</script>
+
+
 Zelij lets you create rich, interactive charts that visualize your data directly in the browser.  
 
 --- 
@@ -14,7 +19,7 @@ You have two ways to build charts, depending on your preferred workflow:
 
 Choose the method that best fits your needs. You can always mix and match in the same dashboard.
 
-## [UI Editor](/docs/charts/ui_editor)
+## [UI Editor]({base}/docs/charts/ui_editor)
 
 A visual, no-code editor that lets you:
 
@@ -24,7 +29,7 @@ A visual, no-code editor that lets you:
 
 Ideal for quick prototyping, data exploration, or users unfamiliar with SQL and chart config.
 
-## [Advanced Editor](/docs/charts/advanced_editor)
+## [Advanced Editor]({base}/docs/charts/advanced_editor)
 
 A power-user mode that gives you full control:
 

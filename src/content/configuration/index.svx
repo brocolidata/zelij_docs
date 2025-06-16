@@ -3,6 +3,9 @@ title: Configuration overview
 description: Learn how to configure your Zelij projects
 ---
 
+<script>
+   import { base } from '$app/paths';
+</script>
 
 Zelij uses a simple and flexible configuration system based on [YAML configuration files](#yaml-configuration) and [data files](#data-files)
 
@@ -39,9 +42,9 @@ This will:
 
 The `zelij_configuration.json` file contains all the structured configuration needed by Zelij, including:
 
-* [`data_sources`](/docs/configuration/data_sources)
-* [`data_apps`](/docs/configuration/data_apps)
-* [`dashboards`](/docs/configuration/dashboards)
+* [`data_sources`]({base}/docs/configuration/data_sources)
+* [`data_apps`]({base}/docs/configuration/data_apps)
+* [`dashboards`]({base}/docs/configuration/dashboards)
 
 
 

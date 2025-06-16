@@ -3,6 +3,10 @@ title: Get Started
 description: Learn how to set up and start Zelij
 ---
 
+<script>
+   import { base } from '$app/paths';
+</script>
+
 
 ## Prerequisites
 
@@ -36,6 +40,6 @@ Zelij is now running at `http://localhost:5173`!
 
 ## Next Steps
 
-- See the [Configuration overview](../docs/configuration)
-- See the [Chart overview](../docs/charts)
-- See the [Deployment overview](../docs/deployment)
+- See the [Configuration overview]({base}/docs/configuration)
+- See the [Chart overview]({base}/docs/charts)
+- See the [Deployment overview]({base}/docs/deployment)

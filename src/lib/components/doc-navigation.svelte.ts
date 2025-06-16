@@ -15,7 +15,7 @@ class DocsNavigation {
     }
 
     public async generateNavigation(): Promise<NavItem[]> {
-        const modules = import.meta.glob(`/src/content/**/*.md`);
+        const modules = import.meta.glob(`/src/content/**/*.{md,svx}`);
         const flatItems: NavItem[] = [];
 
         // First, collect all items in a flat structure
@@ -24,7 +24,8 @@ class DocsNavigation {
                 const doc = await (resolver as DocResolver)();
                 if (!doc?.metadata?.title) continue;
 
-                let href = `/docs${path.replace(/^\/src\/content/, '').replace(/\.md$/, '')}`;
+                let endpoint = path.replace(/^\/src\/content/, '').replace(/\.md$/, '').replace(/\.svx$/, '');
+                let href = `/docs${endpoint}`;
                 href = href.replace(/\/index$/, '');
 
                 const { title, disabled, external, label } = doc.metadata;

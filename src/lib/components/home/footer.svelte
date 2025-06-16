@@ -1,14 +1,15 @@
 <script>
 	import { navItems, siteConfig, companyInfo } from '$lib/config';
 	import SocialMedia from '../social-media.svelte';
+	import { base } from '$app/paths';
 </script>
 
 <footer class="mx-auto mt-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8">
 	<div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
 		<div>
 			<a href="/">
-				<img src={siteConfig.logo} alt={siteConfig.title} class="h-6 dark:hidden" />
-				<img src={siteConfig.logoDark} alt={siteConfig.title} class="hidden h-6 dark:block" />
+				<img src={base}{siteConfig.logo} alt={siteConfig.title} class="h-6 dark:hidden" />
+				<img src={base}{siteConfig.logoDark} alt={siteConfig.title} class="hidden h-6 dark:block" />
 			</a>
 		</div>
 
@@ -29,7 +30,7 @@
 
 		<div class="flex flex-col items-center gap-2">
 			<div class="flex items-center gap-2"> 
-				<img src={companyInfo.logo} alt={companyInfo.name} class="h-6" />
+				<img src={base}{companyInfo.logo} alt={companyInfo.name} class="h-6" />
 				<span class="text-sm text-muted-foreground">by {companyInfo.name}</span>
 			</div>
             <div class="w-full flex justify-center sm:justify-end">

@@ -104,7 +104,7 @@ function getIndexDocIfExists(slug: string, modules: Modules) {
 	let match: { path?: string; resolver?: DocResolver } = {};
 
 	for (const [path, resolver] of Object.entries(modules)) {
-		if (path.includes(`/${slug}/index.md`)) {
+		if (path.includes(`/${slug}/index.md`) || path.includes(`/${slug}/index.svx`)) {
 			match = { path, resolver: resolver as unknown as DocResolver };
 			break;
 		}

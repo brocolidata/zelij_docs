@@ -6,6 +6,7 @@
 	import DarkModeToggle from '../dark-mode-toggle.svelte';
 	import { navItems, siteConfig, socialLinks } from '$lib/config';
 	import SocialMedia from '../social-media.svelte';
+	import { base } from '$app/paths';
 
 	let isNavOpen = false;
 </script>
@@ -19,8 +20,8 @@
 		<!-- Logo w/ Collapse Button -->
 		<div class="flex items-center justify-between">
 			<a href="/" class="flex items-center">
-				<img src={siteConfig.logo} alt={siteConfig.title} class="h-6 dark:hidden" />
-				<img src={siteConfig.logoDark} alt={siteConfig.title} class="hidden h-6 dark:block" />
+				<img src={base}{siteConfig.logo} alt={siteConfig.title} class="h-6 dark:hidden" />
+				<img src={base}{siteConfig.logoDark} alt={siteConfig.title} class="hidden h-6 dark:block" />
 				<span class="pl-2">{siteConfig.title}</span>
 			</a>
 

@@ -3,6 +3,10 @@ title: Deployment Overview
 description: Learn how to deploy Zelij as a static website
 ---
 
+<script>
+   import { base } from '$app/paths';
+</script>
+
 Zelij dashboards can be deployed as **static websites**, making them lightweight, fast, and extremely cost-effective. This is ideal for publishing open data visualizations or internal dashboards without the need to manage backend servers.
 
 ---
@@ -33,7 +37,7 @@ These files together allow Zelij to function fully in the browser (no backend re
 Each hosting provider or platform may have slightly different requirements. Zelij supports deployment to multiple static hosting platforms through dedicated guides.
 
 **Currently supported**:
-- [GitHub Pages](/docs/deployment/github_pages)
+- [GitHub Pages]({base}/docs/deployment/github_pages)
 
 
 

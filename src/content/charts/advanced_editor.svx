@@ -3,6 +3,11 @@ title: Advanced editor
 description: Learn how to create charts using the advanced editor 
 ---
 
+<script>
+   import { base } from '$app/paths';
+</script>
+
+
 The **Advanced Editor** in Zelij gives you full control over how your charts are created. It’s ideal for users who are comfortable writing SQL and want to customize their charts using Apache ECharts directly.
 
 You can access the Advanced Editor when creating a chart tile in edit mode by switching to "Advanced Editor".
@@ -71,5 +76,5 @@ This is where you define how your data is visualized.
 ### Tips & Notes
 
 * Do not define a `dataset` manually in the chart options, a dataset is automatically added to the chart options with the SQL query result.
-* [Cross-charts filtering](/docs/charts#cross-charts-filtering) isn't supported for Advanced Editor.
+* [Cross-charts filtering]({base}/docs/charts#cross-charts-filtering) isn't supported for Advanced Editor.
 * Errors in the SQL query or JSON format will prevent the chart from rendering—check the console for feedback.

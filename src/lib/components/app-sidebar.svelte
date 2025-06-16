@@ -6,6 +6,8 @@
 	import { docsNavigation } from '$lib/components/doc-navigation.svelte';
 	import { page } from '$app/state';
 	import SocialMedia from './social-media.svelte';
+	import { base } from '$app/paths';
+
 	const path = $derived(page.url.pathname);
 </script>
 
@@ -16,7 +18,7 @@
 				<Sidebar.MenuButton size="lg">
 					{#snippet child({ props })}
 						<a href="/" {...props}>
-							<img src={siteConfig.logo} alt={siteConfig.title} class="h-6" />
+							<img src="{base}{siteConfig.logo}" alt={siteConfig.title} class="h-6" />
 							<div class="flex flex-col gap-0.5 leading-none">
 								<span class="font-semibold"> {siteConfig.title} </span>
 								<span class="">{siteConfig.version}</span>
